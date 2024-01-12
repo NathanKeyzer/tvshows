@@ -19,30 +19,31 @@
   </div>
 </template>
 
-<script>
+<script setup>
 // to enable connection with pinia
-// import { ref } from 'vue'
-// import { useShowsStore } from '@/stores/counter'
-// const store = useShowsStore()
-// const shows = ref(store.shows)
+import { ref } from 'vue'
+import { useShowsStore } from '@/stores/store'
+const store = useShowsStore()
+const shows = ref(store.shows)
 
-// store.getShows()
-// console.log(shows)
+store.getShows()
+console.log(shows)
 //    Connection with pinia
-export default {
-  data() {
-    return {
-      shows: []
-    }
-  },
-  mounted() {
-    fetch('https://api.tvmaze.com/shows')
-      .then((res) => res.json())
-      .then((data) => (this.shows = Object.groupBy(data, (show) => show.genres[1])))
-      .catch((err) => console.log(err.message))
-    console.log()
-  }
-}
+// request data from api
+// export default {
+//   data() {
+//     return {
+//       shows: []
+//     }
+//   },
+//   mounted() {
+//     fetch('https://api.tvmaze.com/shows')
+//       .then((res) => res.json())
+//       .then((data) => (this.shows = Object.groupBy(data, (show) => show.genres[1])))
+//       .catch((err) => console.log(err.message))
+//     console.log()
+//   }
+// }
 </script>
 
 <style scoped>
