@@ -13,7 +13,7 @@ export default {
             shows.value = data[0]
             search.value = ''
             console.log(shows.value, 'hallo')
-            console.log('lijst met', data)
+            console.log('search results', data)
           })
       }
     }
@@ -26,8 +26,8 @@ export default {
 }
 </script>
 <template>
-  <form @submit.prevent="SearchShows()" class="search-box">
-    <input type="text" placeholder="Wat wil jij kijken?" v-model="search" />
+  <form @submit.prevent="SearchShows()" class="search-box" id="search">
+    <input type="text" placeholder="What to watch?" v-model="search" id="search" />
     <input type="submit" value="Search" />
   </form>
 
@@ -55,8 +55,8 @@ export default {
 
     &[type='text'] {
       width: 100%;
-      color: #fff;
-      background-color: #496583;
+      color: #000;
+      background-color: #fff;
       font-size: 20px;
       padding: 10px 16px;
       border-radius: 8px;
@@ -64,7 +64,7 @@ export default {
       transition: 0.4s;
 
       &::placeholder {
-        color: #f3f3f3;
+        color: #000;
       }
 
       &:focus {
@@ -74,7 +74,7 @@ export default {
     &[type='submit'] {
       width: 100%;
       max-width: 300px;
-      background-color: #42b883;
+      background-color: #59b2ec;
       padding: 16px;
       border-radius: 8px;
       color: #fff;
@@ -83,7 +83,7 @@ export default {
       transition: 0.4s;
 
       &:active {
-        background-color: #3b8070;
+        background-color: #496583;
       }
     }
   }

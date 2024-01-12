@@ -1,85 +1,101 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <div class="navbarLogo">
+      <h1><span>Show</span>Flix</h1>
+      <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it! Nathan" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/series">Series</RouterLink>
-      </nav>
+      <div class="wrapper">
+        <nav>
+          <RouterLink to="/">Home</RouterLink>&nbsp;&nbsp;
+          <RouterLink to="/tvshows">TV Shows</RouterLink>
+        </nav>
+      </div>
     </div>
   </header>
 
   <RouterView />
 </template>
 
-<style scoped>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  &::selection {
+    background: transparentize(#59b2ec, 0.5);
+  }
+}
+
+body {
+  background-color: #183758;
+  margin: auto;
+}
+a,
+.green {
+  text-decoration: none;
+  color: #59b2ec;
+  transition: 0.4s;
+  padding: 3px;
+}
+a:active {
+  /* color: hsla(227, 52%, 36%, 0.2); */
+  color: #496583;
+}
+.navbarlogo {
+  align-content: center;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(222, 59%, 23%, 0.2);
+  }
+}
+
 header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1e1e;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  height: auto;
+  padding: 2em;
+  justify-content: center;
+  margin-bottom: 1rem;
+  /* position: fixed; */
+}
+h1 {
+  color: #59b2ec;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  span {
+    color: #fff;
+  }
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
+/* @media (min-width: 800px) {
+  body {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
   }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
+} */
+/* aanpassen
+@media (min-width: 1024px) {}
+*/
 </style>
