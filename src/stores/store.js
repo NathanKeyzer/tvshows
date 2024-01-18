@@ -7,11 +7,11 @@ export const useShowsStore = defineStore('shows', () => {
   function getShows() {
     fetch('https://api.tvmaze.com/shows')
       .then((res) => res.json())
-      .then((data) => (this.shows = Object.groupBy(data, (show) => show.genres[1])))
+      .then((data) => (shows.value = Object.groupBy(data, (show) => show.genres[1])))
       .catch((err) => console.log(err.message))
     console.log()
   }
-  getShows()
+
   return {
     shows,
     getShows

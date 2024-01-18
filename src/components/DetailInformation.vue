@@ -12,24 +12,26 @@
           <h3>{{ show.name }}</h3>
           <div class="showContainerItem">
             <span>Premiered:</span>
-            <span>{{ show.premiered }}</span>
+            <p>{{ show.premiered }}</p>
           </div>
-          <p class="summary">{{ show.summary }}</p>
-          <div class="showContainerItem">
-            <span>Network:</span> <span>{{ show.network.name }}</span>
-          </div>
-          <div class="showContainerItem">
-            <span>Language:</span> <span>{{ show.language }}</span>
-          </div>
-          <div class="showContainerItem">
-            <span>Status:</span><span>{{ show.status }}</span>
-          </div>
-          <p class="rating">Rating:{{ show.rating.average }}</p>
+          <p v-html="show.summary" class="summary"></p>
+          <p class="rating">Rating: {{ show.rating.average }}</p>
           <div class="showGenres">
             <span>Genres:</span>
             <p v-for="genre in show.genres" :key="genre">{{ genre }}</p>
           </div>
-          <!-- <div class="showGenres" v-for="genre in show.genres" :key="genre"></div> -->
+          <div class="showContainerItem">
+            <span>Network:</span>
+            <p>{{ show.network.name }}</p>
+          </div>
+          <div class="showContainerItem">
+            <span>Language:</span>
+            <p>{{ show.language }}</p>
+          </div>
+          <div class="showContainerItem">
+            <span>Status:</span>
+            <p>{{ show.status }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -116,9 +118,15 @@ img.showPoster {
   display: flex;
   gap: 1.25rem;
 }
+.showContainerItem p {
+  font-style: italic;
+}
 .infoContainer,
 span {
   color: #fff;
+}
+span {
+  font-weight: bold;
 }
 p.summary {
   color: #fff;
@@ -126,8 +134,9 @@ p.summary {
   text-align: justify;
   padding-right: 1.25rem;
   width: 50%;
+  font-style: italic;
 }
-p.rating {
+.rating {
   color: #46d369;
   font-weight: bold;
 }
@@ -136,6 +145,11 @@ p.rating {
   flex-direction: row;
   align-items: center;
   gap: 1.25rem;
+}
+.showGenres p {
+  background-color: #59b2ec;
+  border-radius: 5px;
+  padding: 5px;
 }
 @media (min-width: 1024px) {
   /* .about {
@@ -201,7 +215,7 @@ p.rating {
     padding-right: 0;
     width: 85%;
   }
-  p.rating {
+  .rating {
     color: #46d369;
     font-weight: bold;
   }

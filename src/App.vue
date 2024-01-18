@@ -10,8 +10,8 @@ import { RouterLink, RouterView } from 'vue-router'
 
       <div class="wrapper">
         <nav>
-          <RouterLink to="/">Home</RouterLink>&nbsp;&nbsp;
-          <RouterLink to="/tvshows">TV Shows</RouterLink>
+          <RouterLink to="/tvshows">TV Shows</RouterLink>&nbsp;&nbsp;
+          <RouterLink to="/">Search</RouterLink>
         </nav>
       </div>
     </div>
@@ -43,7 +43,6 @@ a,
   padding: 3px;
 }
 a:active {
-  /* color: hsla(227, 52%, 36%, 0.2); */
   color: #496583;
 }
 .navbarlogo {
@@ -66,7 +65,6 @@ header {
   padding: 2em;
   justify-content: center;
   margin-bottom: 1rem;
-  /* position: fixed; */
 }
 h1 {
   color: #59b2ec;
@@ -80,22 +78,5 @@ h1 {
 .wrapper {
   display: flex;
   justify-content: center;
-  /* flex-wrap: wrap; */
 }
-
-/* @media (min-width: 800px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-} */
-/* aanpassen
-@media (min-width: 1024px) {}
-*/
 </style>
